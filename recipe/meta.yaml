@@ -1,5 +1,4 @@
 {% set name = "py-bip39-bindings" %}
-{% set sha256 = "ea989a606dec90e1c9a8b668ac9d5a7388141cd973d665d8b28caa000552c76c" %}
 {% set version = "0.1.11" %}
 
 package:
@@ -7,16 +6,16 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  url: https://github.com/polkascan/py-bip39-bindings/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: ea989a606dec90e1c9a8b668ac9d5a7388141cd973d665d8b28caa000552c76c
+  patches:
+    - fix-metadata-pep621.patch
 
 build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vvv
   number: 1
-  patches:
-    - fix-metadata-pep621.patch
 
 requirements:
   build:
