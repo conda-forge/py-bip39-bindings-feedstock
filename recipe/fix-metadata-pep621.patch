@@ -50,8 +50,8 @@ diff --git a/pyproject.toml b/pyproject.toml
 +license = "Apache-2.0"
 +readme = "README.md"
 +edition = "2018"
-+maintainer = "Stichting Polkascan (Polkascan Foundation)"
-+maintainer-email = "legal@polkascan.org"
++maintainer = [{
++    name="Stichting Polkascan (Polkascan Foundation)", email="legal@polkascan.org"}]
 +classifier = [
 +    "License :: OSI Approved :: Apache Software License",
 +    "Intended Audience :: Developers",
