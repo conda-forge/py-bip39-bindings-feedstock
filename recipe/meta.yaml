@@ -23,8 +23,8 @@ requirements:
     - cargo-bundle-licenses
   host:
     - maturin =0.14.17
-    - python
     - pip
+    - python
     - setuptools-rust
   run:
     - python
@@ -38,6 +38,8 @@ test:
   commands:
     - pip check
     - pytest -v tests.py
+  downstreams:
+    - py-sr25519-bindings
 
 about:
   home: https://github.com/polkascan/py-bip39-bindings
