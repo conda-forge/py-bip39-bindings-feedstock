@@ -1,0 +1,21 @@
+diff --git a/Cargo.toml b/Cargo.toml
+--- a/Cargo.toml
++++ b/Cargo.toml	(date 1707507666861)
+@@ -22,17 +15,3 @@
+ [dependencies.pyo3]
+ version = "0.11.1"
+ features = ["extension-module"]
+-
+-[package.metadata.maturin]
+-maintainer = "Stichting Polkascan (Polkascan Foundation)"
+-maintainer-email = "legal@polkascan.org"
+-classifier = [
+-    "License :: OSI Approved :: Apache Software License",
+-    "Intended Audience :: Developers",
+-    "Programming Language :: Python :: 3",
+-    "Programming Language :: Python :: 3.7",
+-    "Programming Language :: Python :: 3.8",
+-    "Programming Language :: Python :: 3.9",
+-    "Programming Language :: Python :: 3.10",
+-    "Programming Language :: Python :: 3.11"
+-]
