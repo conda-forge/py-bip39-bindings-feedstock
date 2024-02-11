@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/polkascan/py-bip39-bindings/archive/refs/tags/v{{ version }}.tar.gz
+  url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: ea989a606dec90e1c9a8b668ac9d5a7388141cd973d665d8b28caa000552c76c
   patches:
     - fix-Cargo-pep621.patch
