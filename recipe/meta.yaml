@@ -43,6 +43,7 @@ test:
     - pytest -v tests.py
   downstreams:
     - py-sr25519-bindings
+    - py-ed25519-zebra-bindings
 
 about:
   home: https://github.com/polkascan/py-bip39-bindings
