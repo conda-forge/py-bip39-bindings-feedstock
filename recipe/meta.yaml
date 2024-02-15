@@ -37,10 +37,11 @@ test:
     - tests.py
   requires:
     - pytest
+    - python
     - pip
   commands:
     - pip check
-    - pytest -v tests.py
+    - python -m pytest -v tests.py
   downstreams:
     - py-sr25519-bindings
     - py-ed25519-zebra-bindings
