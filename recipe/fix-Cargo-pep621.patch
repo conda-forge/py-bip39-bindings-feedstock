@@ -1,10 +1,12 @@
 diff --git a/Cargo.toml b/Cargo.toml
 --- a/Cargo.toml
 +++ b/Cargo.toml	(date 1707507666861)
-@@ -22,17 +15,3 @@
+@@ -20,19 +20,5 @@
+ crate-type = ["cdylib"]
+
  [dependencies.pyo3]
- version = "0.11.1"
- features = ["extension-module"]
+-version = "0.11.1"
++version = "0.15.2"
 -
 -[package.metadata.maturin]
 -maintainer = "Stichting Polkascan (Polkascan Foundation)"
