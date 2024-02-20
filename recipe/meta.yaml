@@ -16,7 +16,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vvv
-  number: 2
+  number: 3
 
 requirements:
   build:
@@ -55,4 +55,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - arjanz
     - MementoRC
