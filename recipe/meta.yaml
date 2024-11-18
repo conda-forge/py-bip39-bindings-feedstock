@@ -1,5 +1,5 @@
 {% set name = "py-bip39-bindings" %}
-{% set version = "0.1.11" %}
+{% set version = "0.1.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: ea989a606dec90e1c9a8b668ac9d5a7388141cd973d665d8b28caa000552c76c
+  sha256: 07178c2ef7c4284e1531d344b9a5353dd35a259c20b71276e450d3ab82db2682
   patches:
     - fix-Cargo-pep621.patch
     - fix-pyproject-pep621.patch
@@ -18,7 +18,7 @@ build:
     - {{ PYTHON }} -m pip install . -vvv
   # Compilation fails on windows due to missing __imp__PyObject_NextNotImplemented symbol
   skip: true  # [win and py>=313]
-  number: 4
+  number: 0
 
 requirements:
   build:
