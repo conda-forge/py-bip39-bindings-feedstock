@@ -8,9 +8,9 @@ package:
 source:
   url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 07178c2ef7c4284e1531d344b9a5353dd35a259c20b71276e450d3ab82db2682
-  patches:
-    - fix-Cargo-pep621.patch
-    - fix-pyproject-pep621.patch
+  #patches:
+  #  - fix-Cargo-pep621.patch
+  #  - fix-pyproject-pep621.patch
 
 build:
   script:
