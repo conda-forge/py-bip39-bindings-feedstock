@@ -1,5 +1,5 @@
 {% set name = "py-bip39-bindings" %}
-{% set version = "0.1.12" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 07178c2ef7c4284e1531d344b9a5353dd35a259c20b71276e450d3ab82db2682
+  sha256: 49187bd49299bdcc3708fbe4fafa78ffba0fa6505a56e4fd09a33189d754fd95
 
 build:
   script_env:
