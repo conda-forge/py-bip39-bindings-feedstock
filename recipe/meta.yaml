@@ -15,7 +15,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vvv
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -23,6 +23,9 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - maturin =0.14.17  # [build_platform != target_platform]
+    - python  # [build_platform != target_platform]
   host:
     - maturin =0.14.17
     - pip
@@ -40,9 +43,9 @@ test:
   commands:
     - pip check
     - pytest -v tests.py
-  downstreams:
-    - py-sr25519-bindings
-    - py-ed25519-zebra-bindings
+  # downstreams:
+  #   - py-sr25519-bindings
+  #   - py-ed25519-zebra-bindings
 
 about:
   home: https://github.com/polkascan/py-bip39-bindings
