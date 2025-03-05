@@ -1,5 +1,5 @@
 {% set name = "py-bip39-bindings" %}
-{% set version = "0.1.11" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,16 +7,15 @@ package:
 
 source:
   url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: ea989a606dec90e1c9a8b668ac9d5a7388141cd973d665d8b28caa000552c76c
-  patches:
-    - fix-Cargo-pep621.patch
-    - fix-pyproject-pep621.patch
+  sha256: 49187bd49299bdcc3708fbe4fafa78ffba0fa6505a56e4fd09a33189d754fd95
 
 build:
+  script_env:
+    - PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vvv
-  number: 5
+  number: 2
 
 requirements:
   build:
@@ -24,6 +23,9 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('rust') }}
     - cargo-bundle-licenses
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - maturin =0.14.17  # [build_platform != target_platform]
+    - python  # [build_platform != target_platform]
   host:
     - maturin =0.14.17
     - pip
@@ -41,9 +43,9 @@ test:
   commands:
     - pip check
     - pytest -v tests.py
-  downstreams:
-    - py-sr25519-bindings
-    - py-ed25519-zebra-bindings
+  # downstreams:
+  #   - py-sr25519-bindings
+  #   - py-ed25519-zebra-bindings
 
 about:
   home: https://github.com/polkascan/py-bip39-bindings
