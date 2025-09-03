@@ -1,5 +1,5 @@
 {% set name = "py-bip39-bindings" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 49187bd49299bdcc3708fbe4fafa78ffba0fa6505a56e4fd09a33189d754fd95
+  sha256: de4def747bea7fd4eb7f7b1d75eaa60a09c2598f0612bbae87231696ab594586
 
 build:
   script_env:
@@ -15,7 +15,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vvv
-  number: 1
+  number: 0
 
 requirements:
   build:
