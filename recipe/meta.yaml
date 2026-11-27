@@ -8,6 +8,9 @@ package:
 source:
   url: https://github.com/polkascan/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: de4def747bea7fd4eb7f7b1d75eaa60a09c2598f0612bbae87231696ab594586
+  # pyo3 >= 0.29 needed for python 3.15 / 3.15t; drop once upstream releases polkascan/py-bip39-bindings#25
+  patches:
+    - 0001-bump-pyo3-0.30.patch
 
 build:
   script_env:
@@ -15,7 +18,7 @@ build:
   script:
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
     - {{ PYTHON }} -m pip install . -vvv
-  number: 3
+  number: 4
 
 requirements:
   build:
